@@ -1,0 +1,127 @@
+body {
+    background-color: #333;
+}
+
+table {
+    width: 385px;
+    height: 350px;
+    background: #1a1a1a;
+    color: #c4c3c2;
+    text-align: center;
+    font-size: 14px;
+    cursor: default;
+    user-select: none;
+}
+
+td,
+th {
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    margin: 3px;
+    padding: 3px;
+}
+
+table span {
+    display: block;
+    background: #1a1a1a;
+    line-height: 21px;
+}
+
+.disable {
+    color: #5a5a5a;
+}
+
+.active span {
+    background: #0078d7;
+    line-height: 21px;
+}
+
+.hoverContainer {
+    background: #1a1a1a;
+    position: relative;
+    width: 385px;
+    height: 350px;
+    margin: 100px auto;
+    /* border-radius: 50%; */
+}
+
+.time {
+    width: 100%;
+    background: #1a1a1a;
+    height: 110px;
+    border-bottom: #525253 solid 1px;
+    padding: 10px;
+    box-sizing: border-box;
+    /* text-align: center; */
+}
+
+.time h1 {
+    color: #fff;
+    font-weight: 200;
+    font-size: 40px;
+    padding: 10px 10px 0px 10px;
+    margin: 0;
+    cursor: default;
+}
+
+.time p {
+    cursor: pointer;
+    color: #a6d8ff;
+    margin: 0;
+    padding: 0px 10px 0px 10px;
+    font-size: 13px;
+}
+
+.time p:hover {
+    color: #5a5a5a;
+}
+
+.date {
+    height: 50px;
+    line-height: 50px;
+    user-select: none;
+}
+
+.date .d {
+    color: #a5a6a5;
+    font-size: 13px;
+    cursor: default;
+    padding-left: 20px;
+}
+
+.date .d:hover {
+    color: #f0f0f0;
+}
+
+.date .r {
+    /* float: right; */
+    cursor: default;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #a5a6a5;
+    border-left: 0px solid;
+    border-top: 0px solid;
+    transform: translateY(-25%) translateX(238px) rotate(45deg);
+}
+
+.date .r:hover {
+    border-color: #f0f0f0;
+}
+
+.date .l {
+    /* float: right; */
+    cursor: default;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #a5a6a5;
+    border-left: 0px solid;
+    border-top: 0px solid;
+    transform: translateY(25%) translateX(199px) rotate(225deg);
+}
+
+.date .l:hover {
+    border-color: #f0f0f0;
+}
