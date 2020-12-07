@@ -1,9 +1,22 @@
+<!-- <script>
+    // 检测当前页面宽度，若为移动端，则转到移动端受限页面中
+    if (window.innerWidth < 750) {
+        location.href = "/minScreen.html";
+    }
+    window.onresize = function() {
+        console.log(window.innerWidth);
+        if (window.innerWidth < 750) {
+            location.href = "/minScreen.html";
+        }
+    }
+</script> -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./头像.ico" type="image/x-icon">
     <title>日历</title>
     <link rel="stylesheet" href="./index.css">
 </head>
@@ -114,6 +127,7 @@
             setCalendar(date.getFullYear() + '-' + getFormatDate(month) + '-' + getFormatDate(day));
 
         })
+        console.log("%c案例GitHub地址：https://github.com/queuecat/light-hover", "color:#0aa");
     </script>
 </body>
 
