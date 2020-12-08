@@ -5,7 +5,7 @@ var mm = D.getMonth() + 1;
 var dd = D.getDate();
 var ww = D.getDay();
 var ss = parseInt(D.getTime() / 1000);
-document.querySelector(".time p").innerHTML = yy + "年" + mm + "月" + dd + "日 " + showCal();
+document.querySelector(".time p").innerHTML = yy + "年" + mm + "月" + dd + "日 " + calendar.getLunartoDay();
 //时间
 function getDate() {
 
@@ -67,7 +67,7 @@ function getFormatDate(arg) {
     return re;
 }
 
-function setCalendar(D) {
+function setCalendar(D, num) {
     //设置日历
     //计算当前日期
     if (typeof(D) == "string") {
@@ -97,19 +97,25 @@ function setCalendar(D) {
         let son = dateBox[index].children;
         if (dayArr[1] == mm) {
             if (getYMD(new Date(firstDay)) == getYMD(new Date())) {
-                dateBox[index].classList = "light_hover active";
+
+
+                dateBox[index].classList = "light_hover active click";
+                document.querySelector(".date2 .d2").innerHTML = "今天 " + calendar.getLunartoDay();
+
             } else {
                 dateBox[index].classList = "light_hover";
             }
             son[0].innerHTML = dayArr[2];
-            son[1].innerHTML = showDay(firstDay);
+            var lunarDay = calendar.parseDate(firstDay);
+            son[1].innerHTML = lunarDay.Term ? lunarDay.Term : lunarDay.IDayCn;
         } else {
             dateBox[index].classList = "light_hover disable";
             let son = dateBox[index].children;
             son[0].innerHTML = dayArr[2];
-            son[1].innerHTML = showDay(firstDay);
+            var lunarDay = calendar.parseDate(firstDay);
+            son[1].innerHTML = lunarDay.Term ? lunarDay.Term : lunarDay.IDayCn;
         }
-
+        dateBox[index].setAttribute("data-date", firstDay);
         firstDay = addDate(firstDay);
     }
 }

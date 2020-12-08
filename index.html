@@ -97,9 +97,13 @@
                 <td class="disable light_hover"><span>2</span><span>廿五</span></td>
             </tr>
         </table>
+        <div class="date2">
+            <span class="d2">2020-12-07</span>
+
+        </div>
     </div>
     <script src="./light_hover.js"></script>
-    <script src="./lunar_calendar.js"></script>
+    <script src="./lunar_calendar_new.js"></script>
     <script src="./setTime.js"></script>
     <script>
         //光晕效果
@@ -119,14 +123,49 @@
 
         })
         document.querySelector(".date .l").addEventListener("click", () => {
-            var nowDate = document.querySelector(".date .d").innerHTML;
-            var date = new Date(nowDate);
-            date.setMonth(date.getMonth() - 1);
-            var month = date.getMonth() + 1;
-            var day = date.getDate();
-            setCalendar(date.getFullYear() + '-' + getFormatDate(month) + '-' + getFormatDate(day));
+                var nowDate = document.querySelector(".date .d").innerHTML;
+                var date = new Date(nowDate);
+                date.setMonth(date.getMonth() - 1);
+                var month = date.getMonth() + 1;
+                var day = date.getDate();
+                setCalendar(date.getFullYear() + '-' + getFormatDate(month) + '-' + getFormatDate(day));
 
-        })
+            })
+            //点击生成蓝色边框
+        function noBlue() {
+            var dateBox = document.querySelectorAll("td");
+            //排他
+            for (let i = 0; i < dateBox.length; i++) {
+                const element = dateBox[i];
+                element.classList.remove("click");
+                console.log()
+            }
+
+        }
+        (function() {
+            var dateBox = document.querySelectorAll("td");
+            //绑定事件
+            for (let i = 0; i < dateBox.length; i++) {
+                const element = dateBox[i];
+                element.addEventListener("click", function() {
+                    noBlue();
+                    element.classList.add("click");
+                    if (getYMD(new Date(element.dataset.date)) == getYMD(new Date())) {
+                        document.querySelector(".date2 .d2").innerHTML = "今天 " + calendar.getLunartoDay(element.dataset.date);
+
+                    } else {
+                        document.querySelector(".date2 .d2").innerHTML = calendar.getLunartoDay(element.dataset.date);
+
+                    }
+
+                })
+            }
+
+        })()
+
+
+
+
         console.log("%c案例GitHub地址：https://github.com/queuecat/light-hover", "color:#0aa");
     </script>
 </body>

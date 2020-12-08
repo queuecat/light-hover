@@ -37,11 +37,24 @@ table span {
     line-height: 21px;
 }
 
+.click span {
+    border: 2px solid #0c6cb8;
+    line-height: 19px;
+}
+
+.click span:first-child {
+    border-bottom: none;
+}
+
+.click span:last-child {
+    border-top: none;
+}
+
 .hoverContainer {
     background: #1a1a1a;
     position: relative;
     width: 385px;
-    height: 350px;
+    /* height: 350px; */
     margin: 100px auto;
     /* border-radius: 50%; */
 }
@@ -124,4 +137,18 @@ table span {
 
 .date .l:hover {
     border-color: #f0f0f0;
+}
+
+.date2 {
+    height: 50px;
+    line-height: 50px;
+    user-select: none;
+    border-top: #525253 solid 1px;
+}
+
+.date2 .d2 {
+    color: #f0f0f0;
+    font-size: 15px;
+    cursor: default;
+    padding-left: 20px;
 }
