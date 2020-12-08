@@ -16,6 +16,10 @@ function getDate() {
     var today = new Date(nowDate + offset_GMT * 60 * 1000 + timezone * 60 * 60 * 1000);
     var time = twoDigits(today.getHours()) + ":" + twoDigits(today.getMinutes()) + ":" + twoDigits(today.getSeconds());
     document.querySelector(".time h1").innerHTML = time;
+    if (new Date().getDate() != new Date(document.querySelector(".date .d").innerHTML).getDate()) {
+        setCalendar();
+        console.log(123);
+    }
 }
 
 function twoDigits(val) {
