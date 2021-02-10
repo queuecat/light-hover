@@ -34,10 +34,15 @@ table span {
 
 .active span {
     background: #0078d7;
-    line-height: 21px;
+    /* line-height: 21px; */
 }
 
-.click span {
+.click {
+    background: rgb(12, 108, 184) !important;
+}
+
+
+/* .click span {
     border: 2px solid #0c6cb8;
     line-height: 19px;
 }
@@ -48,7 +53,7 @@ table span {
 
 .click span:last-child {
     border-top: none;
-}
+} */
 
 .hoverContainer {
     background: #1a1a1a;

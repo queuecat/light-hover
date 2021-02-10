@@ -10,6 +10,11 @@ function lightHover(r = 80) {
         var tds = document.querySelectorAll(".light_hover");
         //光标范围半径
         for (let index = 0; index < tds.length; index++) {
+            // //蓝色边框跳过
+            // if (tds[index].className.indexOf("click") != -1) {
+            //     // tds[index].style.backgroundColor = "";
+            //     continue;
+            // }
             //每个日期格的边距离视口的距离
             var element = tds[index].getBoundingClientRect();
             var L = element.x;
@@ -82,12 +87,11 @@ function lightHover(r = 80) {
             //当光标在盒子里
             if ((x > L && x < R) && (y > T && y < B)) {
                 tds[index].style.backgroundImage = "";
-
                 tds[index].style.backgroundColor = "#7d7e7e";
-
             } else {
                 tds[index].style.backgroundColor = "";
             }
+
         }
 
 

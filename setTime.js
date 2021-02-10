@@ -18,7 +18,6 @@ function getDate() {
     document.querySelector(".time h1").innerHTML = time;
     if (new Date().getDate() != new Date(document.querySelector(".date .d").innerHTML).getDate()) {
         setCalendar();
-        console.log(123);
     }
 }
 
