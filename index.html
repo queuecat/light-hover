@@ -1,15 +1,3 @@
-<script>
-    // 检测当前页面宽度，若为移动端，则转到移动端受限页面中
-    if (window.innerWidth < 750) {
-        location.href = "/minScreen.html";
-    }
-    window.onresize = function() {
-        console.log(window.innerWidth);
-        if (window.innerWidth < 750) {
-            location.href = "/minScreen.html";
-        }
-    }
-</script>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,6 +7,18 @@
     <link rel="shortcut icon" href="./头像.ico" type="image/x-icon">
     <title>日历</title>
     <link rel="stylesheet" href="./index.css">
+    <script>
+        // 检测当前页面宽度，若为移动端，则转到移动端受限页面中
+        if (window.innerWidth < 750) {
+            location.href = "/minScreen.html";
+        }
+        window.onresize = function() {
+            console.log(window.innerWidth);
+            if (window.innerWidth < 750) {
+                location.href = "/minScreen.html";
+            }
+        }
+    </script>
 </head>
 
 <body>
